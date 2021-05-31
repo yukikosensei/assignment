@@ -1,0 +1,37 @@
+<body class="login-page" style="min-height: 762.672px;">
+   <div class="login-box">
+      <div class="login-logo">
+        <%= image_tag 'logo.png', width: "100px" %>
+      </div>
+      <div class="card">
+         <div class="card-body login-card-body">
+            <p class="mb-1 text-center">会員登録申請</p>
+            <p class="text-center">SMILEVISAをご利用するためには、会員登録が必要です。こちらから会員登録申請後、2営業日以内にSMILEVISAチームがアカウントを作成いたします。</p>
+            <%= form_with(model: @user, local: true) do |form| %>
+               <div class="mb-3"><%= form.text_field :email, class:"form-control half-width-only error", required: true, autofocus: true, placeholder: "メールアドレス" %></div>
+               <div class="mb-3"><%= form.text_field :name, class: "form-control", required: true, placeholder: "お名前" %></div>
+               <div class="mb-2"><%= form.text_field :company_name, class: "form-control", required: true, placeholder: "勤務先名" %></div>
+               <div class="mb-2">電話番号</div>
+               <div class="mb-3">
+                  <div class="row">
+                     <div class="col-3"><%= form.text_field :phone_number1, class: "form-control number-half-width-only", required: true, placeholder: "11111", maxlength: "5", size: "5" %></div>
+                     <div class="hyphen-symbol">−</div>
+                     <div class="col-3"><%= form.text_field :phone_number2, class: "form-control number-half-width-only", required: true, placeholder: "1111", maxlength: "4", size: "4" %></div>
+                     <div class="hyphen-symbol">−</div>
+                     <div class="col-3"><%= form.text_field :phone_number3, class: "form-control number-half-width-only", required: true, placeholder: "1111", maxlength: "4", size: "4" %></div>
+                  </div>
+               </div>
+               <div class="mb-3"><%= form.password_field :password, autocomplete: "new-password", class: "form-control half-width-only", required: true, placeholder: "半角英数字8文字以上のパスワードを設定" %></div>
+               <div class="mb-2"><%= form.password_field :password_confirmation, autocomplete: "new-password", class: "form-control half-width-only", required: true, placeholder: "パスワード（確認用）" %></div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="mb-2"><a target="blank" href="/terms_of_use">利用規約、</a><a target="blank" href="/privacy_policy">プライバシーポリシー</a>に同意の上でお進みください。</div>
+                     <%= form.submit "登録申請", class: "btn btn-primary btn-block disabled"  %>
+                  </div>
+               </div>
+            <% end %>
+            <p class="mb-1 mt-3"><%= link_to "ログイン", "/login" %></p>
+         </div>
+      </div>
+   </div>
+</body>
