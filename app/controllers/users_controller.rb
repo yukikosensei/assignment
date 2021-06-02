@@ -22,6 +22,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    redirect_to root_path unless current_user
+    @user = User.find(params[:id])
   end
 
   private
