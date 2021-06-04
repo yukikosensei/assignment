@@ -13,6 +13,7 @@
  */
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "documents";
 
 .login-page, .register-page {
   align-items: center;
@@ -39,4 +40,12 @@
   border-top: 0;
   color: #666;
   padding: 20px;
+}
+
+.container {
+  text-align: center;
+}
+.inner {
+  display: block;
+  text-align: left;
 }

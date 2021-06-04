@@ -1,0 +1,48 @@
+<h1 class="text-center my-4">雇用契約書</h2>
+<body>
+  <%= form_with(model: @document, local:true, class:"row g-3 d-flex justify-content-center") do |f| %>
+    <div class="col-md-5">
+      <%= f.label :employer, "会社代表取締役指名", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :employer, class:"form-control", required: true, placeholder:"田中太郎" %></div>
+    </div>
+    <div class="col-md-5">
+      <%= f.label :employee, "雇用予定の方の氏名", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :employee, class:"form-control", required: true, placeholder:"John Marshall Clemens" %></div>
+    </div>
+    <div class="col-md-5">
+      <%= f.label :start_date, "雇用開始日", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :start_date, class:"form-control", required: true, placeholder:"2021年10月1日" %></div>
+    </div>
+    <div class="col-md-5">
+      <%= f.label :end_date, "雇用終了日", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :end_date, class:"form-control", required: true, placeholder:"期間の定めなし" %></div>
+    </div>
+    
+    <div class="col-md-5">
+      <%= f.label :postal_code, "雇用場所の郵便番号", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :postal_code, class:"form-control", required: true, placeholder:"〒000-0000" %></div>
+    </div>
+    <div class="col-5">
+      <%= f.label :address, "雇用場所の住所", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :address, class:"form-control", required: true, placeholder:"東京都〇〇区〇〇000-0ABCビル" %></div>
+    </div>
+
+    <div class="col-md-5">
+      <%= f.label :company_name, "会社名", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :company_name, class:"form-control", required: true, placeholder:"YUKIKO.inc" %></div>
+    </div>
+
+    <div class="col-md-5">
+      <%= f.label :salary, "賃金", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :salary, class:"form-control", required: true, placeholder:"月額24万円（基本給）" %></div>
+    </div>
+
+    <div class="col-md-10">
+      <%= f.label :job_detail, "雇用内容", class: "form-label" %>
+      <div class="input-group mb-3"><%= f.text_field :job_detail, class:"form-control", required: true, placeholder:"米国市場調査に基づくマーケティング業務" %></div>
+    </div>
+    
+    <div class="col-12 text-center"><%= f.submit "プレビュー", class: "btn btn-primary" %></div>
+
+  <% end %>  
+</body>

@@ -1,0 +1,21 @@
+<body>
+  <h2 class="text-center my-4">雇用契約書</h2>
+  <div class="container">  
+    <div class="inner">
+      <%= @document.employer %>（以下「甲」とする。）と、<%= @document.employee %>（以下「乙」とする。）は、以下の条件に基づき雇用契約を締結する。
+    </div>
+    <div class="inner">下記の条件で契約します。<div>
+    <div class="inner">
+      1.雇用期間：<%= @document.start_date %>から<%= @document.end_date %>。ただし、甲乙双方が希望する場合には自動的に更新するものとする。
+    </div>
+    <div class="inner">
+      2.雇用場所：<%= @document.company_name %>
+    </div>
+    <div class="inner">
+      <%= @document.postal_code %><%= @document.address %>
+    </div>
+    <div class="inner">
+      3.雇用内容：<%= @document.job_detail %>
+    </div>
+  </div>
+</body>
